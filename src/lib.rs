@@ -10,7 +10,6 @@
 /// All of the enums in this crate are marked as `#[non_exhaustive]` to allow for additions of new
 /// error kinds without requiring a breaking change and version bump.
 
-
 /// A SPI specific error.
 ///
 /// This error type contains errors specific to SPI peripherals. Also it has an `Impl` kind to pass
@@ -28,7 +27,6 @@ pub enum SpiError {
     /// Implementation specific error (shared across all peripheral specific error kinds)
     Impl(ImplError),
 }
-
 
 /// An I2C specific error.
 ///
@@ -56,7 +54,6 @@ pub enum I2cError {
     /// Implementation specific error (shared across all peripheral specific error kinds)
     Impl(ImplError),
 }
-
 
 /// A universal implementation specific error.
 ///
