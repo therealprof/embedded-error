@@ -1,5 +1,7 @@
 #![no_std]
 
+pub mod mci;
+
 /// This crate contains a variety of universal error types which can be used to universally model
 /// conditions which can typically arise for certain peripherals.
 ///
@@ -31,7 +33,7 @@ pub enum SpiError {
 /// An I2C specific error.
 ///
 /// This error type contains errors specific to I2C peripherals. Also it has an `Impl` kind to pass
-/// through implementation specific errors occuring while trying to use an I2C peripheral.
+/// through implementation specific errors occurring while trying to use an I2C peripheral.
 #[non_exhaustive]
 pub enum I2cError {
     /// An unspecific bus error occured
