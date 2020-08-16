@@ -49,7 +49,7 @@ pub enum SetupError {
     /// Could not set to high speed
     CouldNotSetToHighSpeed,
     /// Could not check if it is a high speed device
-    CouldNotCheckIfIsHighSpeed
+    CouldNotCheckIfIsHighSpeed,
 }
 
 /// When sending a command (or receiving its response) something can go wrong
@@ -62,5 +62,5 @@ pub enum CommandOrDataError {
     /// End bit error
     EndBit,
     /// Command index fault
-    Index
+    Index,
 }
