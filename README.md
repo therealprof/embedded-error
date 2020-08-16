@@ -58,6 +58,7 @@ pub fn new(spi: &mut SPI) -> Result<Self, embedded_error::SpiError>
    need to match with a wildcard for unhandled or error cases to be added in the
    future. The Rust compiler will tell you if you're doing it wrong. Here's
    what this could look like:
+
 ```
 use embedded_error::I2cError;
 
@@ -69,6 +70,15 @@ match i2c.write(addr, &[]) {
 ```
 
 Plese check the [embedded-error documentation] for details.
+
+## Currently supported error kinds
+
+At the moment we have support for the following peripherals:
+
+* SPI
+* I2C
+* MCI (MultiMedia Card Interface)
+* Generic implementation errors
 
 ## How to contribute?
 
