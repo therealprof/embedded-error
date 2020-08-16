@@ -1,6 +1,6 @@
 [package]
 name = "embedded-error"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Daniel Egger <daniel@eggers-club.de>"]
 edition = "2018"
 categories = [
