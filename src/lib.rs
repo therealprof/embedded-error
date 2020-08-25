@@ -36,16 +36,16 @@ pub enum SpiError {
 /// through implementation specific errors occurring while trying to use a Serial peripheral.
 #[non_exhaustive]
 pub enum SerialError {
-    /// The peripheral receive buffer was overrun
+    /// The peripheral receive buffer was overrun.
     Overrun,
-    /// Received data does not conform to the peripheral configuration
+    /// Received data does not conform to the peripheral configuration.
     /// Can be caused by a misconfigured device on either end of the serial line.
     FrameFormat,
     /// Parity check failed.
     Parity,
     /// Serial line is too noisy to read valid data.
     Noisy,
-    /// Implementation specific error (shared across all peripheral specific error kinds)
+    /// Implementation specific error (shared across all peripheral specific error kinds).
     Impl(ImplError),
 }
 
