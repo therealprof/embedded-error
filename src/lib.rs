@@ -29,6 +29,18 @@ pub enum SpiError {
     /// Implementation specific error (shared across all peripheral specific error kinds)
     Impl(ImplError),
 }
+#[non_exhaustive]
+pub enum SerialError{
+    /// The peripheral receive buffer was overrun
+    Overrun,
+    /// Framing error occurred
+    /// e.g. configuration mismatch between the TX and the RX devices.
+    Framing,
+    /// Parity check failed.
+    Parity,
+    /// Serial line is too noisy to read valid data.
+    Noisy,
+}
 
 /// An I2C specific error.
 ///
