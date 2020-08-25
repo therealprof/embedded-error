@@ -35,7 +35,7 @@ pub enum SpiError {
 /// This error type contains errors specific to Serial peripherals. Also it has an `Impl` kind to pass
 /// through implementation specific errors occurring while trying to use a Serial peripheral.
 #[non_exhaustive]
-pub enum SerialError{
+pub enum SerialError {
     /// The peripheral receive buffer was overrun
     Overrun,
     /// Received data does not conform to the peripheral configuration
