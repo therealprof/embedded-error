@@ -30,6 +30,25 @@ pub enum SpiError {
     Impl(ImplError),
 }
 
+/// A Serial specific error.
+///
+/// This error type contains errors specific to Serial peripherals. Also it has an `Impl` kind to pass
+/// through implementation specific errors occurring while trying to use a Serial peripheral.
+#[non_exhaustive]
+pub enum SerialError {
+    /// The peripheral receive buffer was overrun.
+    Overrun,
+    /// Received data does not conform to the peripheral configuration.
+    /// Can be caused by a misconfigured device on either end of the serial line.
+    FrameFormat,
+    /// Parity check failed.
+    Parity,
+    /// Serial line is too noisy to read valid data.
+    Noise,
+    /// Implementation specific error (shared across all peripheral specific error kinds).
+    Impl(ImplError),
+}
+
 /// An I2C specific error.
 ///
 /// This error type contains errors specific to I2C peripherals. Also it has an `Impl` kind to pass
