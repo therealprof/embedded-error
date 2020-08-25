@@ -40,7 +40,7 @@ pub enum SerialError {
     Overrun,
     /// Received data does not conform to the peripheral configuration
     /// Can be caused by a misconfigured device on either end of the serial line.
-    FrameFormatError,
+    FrameFormat,
     /// Parity check failed.
     Parity,
     /// Serial line is too noisy to read valid data.
