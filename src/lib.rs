@@ -44,7 +44,7 @@ pub enum SerialError {
     /// Parity check failed.
     Parity,
     /// Serial line is too noisy to read valid data.
-    Noisy,
+    Noise,
     /// Implementation specific error (shared across all peripheral specific error kinds).
     Impl(ImplError),
 }
