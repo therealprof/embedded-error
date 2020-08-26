@@ -75,6 +75,7 @@ Plese check the [embedded-error documentation] for details.
 
 At the moment we have support for the following peripherals:
 
+* Serial
 * SPI
 * I2C
 * MCI (MultiMedia Card Interface)
