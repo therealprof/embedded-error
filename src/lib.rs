@@ -25,7 +25,7 @@ pub enum SpiError {
     /// CRC does not match the received data
     CRCError,
     /// Received data does not conform to the peripheral configuration
-    FrameFormatError,
+    FrameFormat,
     /// Implementation specific error (shared across all peripheral specific error kinds)
     Impl(ImplError),
 }
@@ -56,7 +56,7 @@ pub enum SerialError {
 #[non_exhaustive]
 pub enum I2cError {
     /// An unspecific bus error occured
-    BusError,
+    Bus,
     /// The arbitration was lost, e.g. electrical problems with the clock signal
     ArbitrationLoss,
     /// A bus operation received a NACK, e.g. due to the addressed device not being available on
