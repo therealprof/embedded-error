@@ -5,7 +5,7 @@ use crate::ImplError;
 /// This error type contains errors specific to MCI (MultiMedia Card Interface) peripherals. Also it
 /// has an `Impl` kind to pass through implementation specific errors occurring while trying to use
 /// an MCI peripheral.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum MciError {
     /// Data Error, can be a CRC problem, timeout or end bit problem
@@ -43,7 +43,7 @@ pub enum MciError {
 }
 
 /// Enumeration used when setting up the device especially when installing MMC
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum SetupError {
     /// Could not set bus width
@@ -55,7 +55,7 @@ pub enum SetupError {
 }
 
 /// When sending a command (or receiving its response) something can go wrong
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum CommandOrDataError {
     /// Timeout occurred

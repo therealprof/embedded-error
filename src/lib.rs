@@ -16,7 +16,7 @@ pub mod mci;
 ///
 /// This error type contains errors specific to SPI peripherals. Also it has an `Impl` kind to pass
 /// through implementation specific errors occuring while trying to use a SPI peripheral.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum SpiError {
     /// The peripheral receive buffer was overrun
@@ -35,7 +35,7 @@ pub enum SpiError {
 ///
 /// This error type contains errors specific to Serial peripherals. Also it has an `Impl` kind to pass
 /// through implementation specific errors occurring while trying to use a Serial peripheral.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum SerialError {
     /// The peripheral receive buffer was overrun.
@@ -55,7 +55,7 @@ pub enum SerialError {
 ///
 /// This error type contains errors specific to I2C peripherals. Also it has an `Impl` kind to pass
 /// through implementation specific errors occurring while trying to use an I2C peripheral.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum I2cError {
     /// An unspecific bus error occured
@@ -85,7 +85,7 @@ pub enum I2cError {
 /// specific peripheral. This will be used for all sorts of connectivity problems, e.g. if an
 /// adapter to the peripheral is used or the target peripheral is connected to indirectly (like bus
 /// expanders) or an operating system is controlling the access and denying access.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[non_exhaustive]
 pub enum ImplError {
     /// Unspecified internal driver error
