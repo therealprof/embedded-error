@@ -12,6 +12,19 @@ pub mod mci;
 /// All of the enums in this crate are marked as `#[non_exhaustive]` to allow for additions of new
 /// error kinds without requiring a breaking change and version bump.
 
+/// A GPIO (General input/output) specific error.
+///
+/// This error type contains errors specific to GPIO peripherals. Also it has an `Impl` kind to
+/// pass through implementation specific errors occuring while trying to use a GPIO peripheral.
+#[derive(Debug, Clone)]
+#[non_exhaustive]
+pub enum GpioError {
+    /// The peripheral is in the wrong operational mode for the intended operation
+    WrongMode,
+    /// Implementation specific error (shared across all peripheral specific error kinds)
+    Impl(ImplError),
+}
+
 /// A SPI specific error.
 ///
 /// This error type contains errors specific to SPI peripherals. Also it has an `Impl` kind to pass
