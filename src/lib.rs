@@ -25,7 +25,6 @@ pub enum GpioError {
     Impl(ImplError),
 }
 
-
 /// A USB specific error.
 ///
 /// This error type contains errors specific to USB peripherals. Also it has an `Impl` kind to pass
@@ -56,7 +55,6 @@ pub enum UsbError {
     /// Implementation specific error (shared across all peripheral specific error kinds)
     Impl(ImplError),
 }
-
 
 /// A SPI specific error.
 ///
