@@ -25,6 +25,39 @@ pub enum GpioError {
     Impl(ImplError),
 }
 
+
+/// A USB specific error.
+///
+/// This error type contains errors specific to USB peripherals. Also it has an `Impl` kind to pass
+/// through implementation specific errors occuring while trying to use a USB peripheral.
+#[derive(Debug, Clone)]
+#[non_exhaustive]
+pub enum UsbError {
+    /// An operation would block because the device is currently busy or there is no data available.
+    WouldBlock,
+    /// Parsing failed due to invalid input.
+    ParseError,
+    /// A buffer too short for the data to read was passed, or provided data cannot fit within
+    /// length constraints.
+    BufferOverflow,
+    /// Classes attempted to allocate more endpoints than the peripheral supports.
+    EndpointOverflow,
+    /// Classes attempted to allocate more packet buffer memory than the peripheral supports. This
+    /// can be caused by either a single class trying to allocate a packet buffer larger than the
+    /// peripheral supports per endpoint, or multiple allocated endpoints together using more memory
+    /// than the peripheral has available for the buffers.
+    EndpointMemoryOverflow,
+    /// The endpoint address is invalid or already used.
+    InvalidEndpoint,
+    /// Operation is not supported by device or configuration.
+    Unsupported,
+    /// Operation is not valid in the current state of the object.
+    InvalidState,
+    /// Implementation specific error (shared across all peripheral specific error kinds)
+    Impl(ImplError),
+}
+
+
 /// A SPI specific error.
 ///
 /// This error type contains errors specific to SPI peripherals. Also it has an `Impl` kind to pass
